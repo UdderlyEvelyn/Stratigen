@@ -1,0 +1,30 @@
+whenever you generate a chunk,
+ - cubes are generated to fill the vertical space up to the heightmap level
+ - cubes are culled in advance (terrain mask)
+ - a model is generated via cuberenderer that represents the remaining cubes
+
+when a cube is removed or added, 
+ - cubes in adjacent spaces to the one in question are re-evaluated for culling
+ - the cuberender model is regenerated
+
+------- techcraft -------
+
+-gameclient class creates an iregionbuilder (depends on map type, is terrainwithcaves out of the box)
+-gameclient has a world, which the build method is called from feeding it that iregionbuilder
+--goes through x/y/z forloops calling the iregionbuilder's build method with a region at that coordinate as the arg
+--calls the build method of the region itself directly after
+---each region has its own vertexbuffer(s), vertex arrays, bounding box, and a dirty flag
+---each region has its own regionmanager
+---region has an array of blocks x/y/z and a "faceinfo" array x/y/z
+---calling build on a region resets the dirty flag and regens the vertex buffers
+---building vertex buffers calls buildblockvertices
+----buildblockvertices creates only the faces that are showing according to the "faceinfo" value passed in
+----faces are built in buildfacevertices
+----depending on what face it is the function gives it a light level for that direction retrieved from the world
+-gameclient initializes the world's lighting
+
+- when a block is removed, the surrounding blocks (6) retrieved (world.blockat), and setblockfaces is called to toggle what faces are visible based on the block type, which since this was block removal is "none"
+
+- adding a block is the same as removing a block, just with the space having a block added instead of being set to none
+
+looks like to refresh after any changes, buildregions is called without any arguments and it checks the dirty flag and calls build on any region that is dirty

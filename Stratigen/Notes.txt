@@ -1,0 +1,2 @@
+﻿make each chunk generate its own map image on Build() and store it, this way we avoid repeated rebuilds when unnecessary and can integrate image generation
+into the pipeline for model generation to avoid duplicate iteration of the blocks and such.

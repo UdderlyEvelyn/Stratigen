@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B393A33D-EBFE-410A-B809-84904615620B}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Stratigen</RootNamespace>
+    <AssemblyName>Stratigen</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>Always</RunPostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Native|AnyCPU'">
+    <OutputPath>bin\Native\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MonoGame.Framework, Version=3.6.0.1625, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MonoGame.Framework.WindowsDX.3.6.0.1625\lib\net40\MonoGame.Framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Datatypes\Conversion.cs" />
+    <Compile Include="Datatypes\OffsetRect.cs" />
+    <Compile Include="Datatypes\Rect.cs" />
+    <Compile Include="Framework\GraphicsDevice.cs" />
+    <Compile Include="Menu.cs" />
+    <Compile Include="Datatypes\Array2.cs" />
+    <Compile Include="Datatypes\Array4.cs" />
+    <Compile Include="Datatypes\Biome.cs" />
+    <Compile Include="Datatypes\Block.cs" />
+    <Compile Include="Datatypes\BlockVPNT.cs" />
+    <Compile Include="Datatypes\BlockType.cs" />
+    <Compile Include="Datatypes\Box.cs" />
+    <Compile Include="Datatypes\Cell.cs" />
+    <Compile Include="Datatypes\Change.cs" />
+    <Compile Include="Datatypes\Chunk.cs" />
+    <Compile Include="Datatypes\Col3.cs" />
+    <Compile Include="Datatypes\Col4.cs" />
+    <Compile Include="Datatypes\ColorVertex.cs" />
+    <Compile Include="Datatypes\Coordinate.cs" />
+    <Compile Include="Datatypes\Quad.cs" />
+    <Compile Include="Datatypes\Queue.cs" />
+    <Compile Include="Datatypes\LitTextureVertex.cs" />
+    <Compile Include="Datatypes\Font.cs" />
+    <Compile Include="Datatypes\Index.cs" />
+    <Compile Include="Datatypes\Instance.cs" />
+    <Compile Include="Datatypes\Material.cs" />
+    <Compile Include="Datatypes\Model.cs" />
+    <Compile Include="Datatypes\Ray.cs" />
+    <Compile Include="Datatypes\Sprite.cs" />
+    <Compile Include="Datatypes\Stack.cs" />
+    <Compile Include="Datatypes\Texture.cs" />
+    <Compile Include="Datatypes\Vec2.cs" />
+    <Compile Include="Datatypes\Vec3.cs" />
+    <Compile Include="Datatypes\Vec4.cs" />
+    <Compile Include="Datatypes\TextureVertex.cs" />
+    <Compile Include="Datatypes\World.cs" />
+    <Compile Include="Framework\Batch.cs" />
+    <Compile Include="Framework\IPersistant.cs" />
+    <Compile Include="Framework\RenderCamera.cs" />
+    <Compile Include="Framework\Camera.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\ILoadable.cs" />
+    <Compile Include="Framework\ICollidable2.cs" />
+    <Compile Include="Framework\ICollidable3.cs" />
+    <Compile Include="Framework\ICollisionObject.cs" />
+    <Compile Include="Framework\Inventory.cs" />
+    <Compile Include="Framework\Item.cs" />
+    <Compile Include="Framework\ItemManager.cs" />
+    <Compile Include="Framework\IVertex.cs" />
+    <Compile Include="Framework\Platform.cs" />
+    <Compile Include="Framework\Scene.cs" />
+    <Compile Include="Framework\ShadowCamera.cs" />
+    <Compile Include="Framework\ThreadManager.cs" />
+    <Compile Include="Globals.cs" />
+    <Compile Include="Kernel.cs" />
+    <Compile Include="Libraries\Blend.cs" />
+    <Compile Include="Libraries\Collision.cs" />
+    <Compile Include="Libraries\Maths.cs" />
+    <Compile Include="Libraries\Miscellaneous.cs" />
+    <Compile Include="Libraries\Array.cs" />
+    <Compile Include="Libraries\Blur.cs" />
+    <Compile Include="Libraries\Carve.cs" />
+    <Compile Include="Libraries\Common.cs" />
+    <Compile Include="Libraries\Image.cs" />
+    <Compile Include="Libraries\Interpolation.cs" />
+    <Compile Include="Libraries\Texture2D.cs" />
+    <Compile Include="Libraries\Threads.cs" />
+    <Compile Include="Libraries\XNA.cs" />
+    <Compile Include="Libraries\Noise.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\Fonts\Consolas-12.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Fonts\Consolas-36.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Fonts\Consolas-36.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Fonts\Nyala-12.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Fonts\ReturnOfGanon-12.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Fonts\SmallFonts-32.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Icons\Leaves.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Icons\Log.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Icons\Dirt.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Icons\Gold.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Icons\Grass.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Icons\Iron.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Icons\Stone.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Textures\Blocks.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Textures\Crosshair.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Notes.txt" />
+    <Content Include="Tools\Blocks.fx" />
+    <Content Include="Tools\ShadowMap.fx" />
+    <Content Include="Tools\Test.fx" />
+    <None Include="App.config" />
+    <None Include="Data\Fonts\Consolas-12.fnt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Fonts\Nyala-12.fnt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Fonts\ReturnOfGanon-12.fnt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Fonts\SmallFonts-32.fnt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Shaders\SM2Blocks.mgfx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Shaders\SM2ShadowMap.mgfx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Shaders\SM4Blocks.mgfx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Shaders\SM4ShadowMap.mgfx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Tools\compile.bat" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <PropertyGroup>
+    <PreBuildEvent>$(ProjectDir)\Tools\compile.bat $(ProjectDir)\Tools\</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
